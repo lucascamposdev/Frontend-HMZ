@@ -3,11 +3,9 @@
 
 # Desafio
 
-> O teste consiste no desenvolvimento de uma aplicação React que utiliza a biblioteca de componentes shadcn/ui e a Fake API (https://reqres.in/api-docs/#/). A aplicação deve permitir que o usuário realize o login e realize ações de listagem, edição e exclusão de usuários.
+> O teste consiste no desenvolvimento de uma aplicação React que utiliza a biblioteca de componentes shadcn/ui e a Fake API (https://reqres.in/api-docs/#/). A aplicação deve permitir que o usuário realize o login e ações de listagem, edição e exclusão de usuários.
 
-# Demonstração
 
-<img src="/public/images/Demonstração.gif">
 
 # Tecnologias utilizadas
 - React w/ Vite
@@ -29,6 +27,10 @@ npm run setup
 # Aplicação poderá ser acessada em:
 http://localhost:5173
 ```
+
+# Demonstração
+
+<img src="/public/images/Demonstração.gif">
 
 
 # Autor
