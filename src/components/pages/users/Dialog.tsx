@@ -1,4 +1,4 @@
-import { useUsers } from "@/components/context/useUsers"
+import { useUsers } from "@/context/useUsers"
 import { Button } from "@/components/ui/button"
 import {
     DialogContent,

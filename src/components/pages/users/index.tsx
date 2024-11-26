@@ -1,6 +1,6 @@
 // Hooks
 import { useState, useEffect } from "react";
-import { useUsers } from "@/components/context/useUsers";
+import { useUsers } from "@/context/useUsers";
 
 // Components
 import Table from "./Table";

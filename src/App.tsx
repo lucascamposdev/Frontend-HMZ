@@ -9,8 +9,8 @@ import Users from "@/components/pages/users";
 import Login from "@/components/pages/login";
 
 // Context
-import { AuthProvider } from "./components/context/useAuth";
-import { UserProvider } from "./components/context/useUsers";
+import { AuthProvider } from "./context/useAuth";
+import { UserProvider } from "./context/useUsers";
 
 function App() {
 

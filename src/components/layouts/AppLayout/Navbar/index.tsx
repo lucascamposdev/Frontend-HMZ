@@ -1,7 +1,7 @@
 import './index.css'
 
 // Hooks
-import { useAuth } from '@/components/context/useAuth';
+import { useAuth } from '@/context/useAuth';
 
 // Components
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';

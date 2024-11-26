@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
 import axios from "axios";
 import { apiUrl } from "@/utils/api";
+import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -30,35 +30,38 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
-  // Validar token ** API não possui rota de validação
-  // useEffect(() => {
-  //   const validateToken = async () => {
-  //     const token = sessionStorage.getItem('token');
-  //     if (!token) {
-  //       setIsAuthenticated(false);
-  //       return;
-  //     }
+  
+  useEffect(() => {
+    const validateToken = async () => {
+      const token = sessionStorage.getItem('token');
+      if (!token) {
+        setIsAuthenticated(false);
+        return;
+      }
 
-  //     try {
-  //       const response = await axios.post(
-  //         apiUrl + "/validate",
-  //         {},
-  //         {
-  //           headers: { Authorization: `Bearer ${token}` },
-  //         }
-  //       );
+      setIsAuthenticated(true);
 
-  //       if (response.status === 200) {
-  //         setIsAuthenticated(true);
-  //       }
-  //     } catch (error) {
-  //       sessionStorage.removeItem('token');
-  //       setIsAuthenticated(false);
-  //     }
-  //   };
+      // ** API não possui rota de validação, então seguiremos com apenas existir um token
+      // try {
+      //   const response = await axios.post(
+      //     apiUrl + "/validate",
+      //     {},
+      //     {
+      //       headers: { Authorization: `Bearer ${token}` },
+      //     }
+      //   );
 
-  //   // validateToken(); 
-  // }, []);
+      //   if (response.status === 200) {
+      //     setIsAuthenticated(true);
+      //   }
+      // } catch (error) {
+      //   sessionStorage.removeItem('token');
+      //   setIsAuthenticated(false);
+      // }
+    };
+
+    validateToken(); 
+  }, []);
 
 
   const logout = () => {

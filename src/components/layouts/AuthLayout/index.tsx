@@ -1,5 +1,5 @@
 // Hooks
-import { useAuth } from "@/components/context/useAuth";
+import { useAuth } from "@/context/useAuth";
 import { Outlet, Navigate } from "react-router-dom";
 
 const AuthLayout = () => {

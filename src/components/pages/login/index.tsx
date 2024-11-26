@@ -2,7 +2,7 @@ import './index.css'
 
 // Hooks
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/components/context/useAuth";
+import { useAuth } from "@/context/useAuth";
 
 // Components
 import { Input } from "@/components/ui/input";
