@@ -26,6 +26,10 @@ npm run setup
 
 # Aplicação poderá ser acessada em:
 http://localhost:5173
+
+# Usuário para login (qualquer email de usuário da api "reqres" com uma senha aleatória irá funcionar)
+emma.wong@reqres.in
+123
 ```
 
 # Demonstração
