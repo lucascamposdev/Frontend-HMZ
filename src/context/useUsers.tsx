@@ -1,7 +1,8 @@
-import React, { createContext, useContext, useState } from "react";
 import axios from "axios";
 import { User } from "@/types/User";
 import { apiUrl } from "@/utils/api";
+import { useToast } from "@/hooks/use-toast"
+import React, { createContext, useContext, useState } from "react";
 
 interface UserContextProps {
   users: User[];
@@ -17,6 +18,7 @@ const UserContext = createContext<UserContextProps | undefined>(undefined);
 export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [users, setUsers] = useState<User[]>([]);
     const [isLoading, setIsLoading ] = useState<boolean>(false);
+    const { toast } = useToast();
   
     const fetchUsers = async (page: number, perPage: number): Promise<User[] | null>  => {
       try {
@@ -53,6 +55,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
         );
 
         setIsLoading(false);
+        toast({ title: "Usuário atualizado com sucesso." })
         return response.data;
       } catch (error) {
         setIsLoading(false);
@@ -68,6 +71,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
   
         setIsLoading(false);
+        toast({ title: "Usuário excluído com sucesso." })
         return true;
       } catch (error) {
         setIsLoading(false);
